@@ -1,0 +1,25 @@
+image: cirrusci/flutter
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - gradle
+          - gradlewrapper
+          - flutter
+        script:
+          - echo "flutter pub get"
+          - flutter
+          - flutter doctor -v
+          - flutter clean
+          - flutter pub get
+          - echo "flutter test"
+          # - flutter test
+          # Enable when build is possible
+          - echo "build apk"
+          #- flutter -v build apk 
+
+definitions:
+  caches:
+    gradlewrapper: ~/.gradle/wrapper
+    flutter: /opt/flutter
