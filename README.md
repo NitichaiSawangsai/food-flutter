@@ -1,4 +1,4 @@
-# white_food_flutter
+# food_flutter
 
 A new Flutter project.
 
